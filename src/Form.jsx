@@ -34,7 +34,7 @@ class Forms extends React.Component {
             label="Nome:"
           >
             {getFieldDecorator('nome', {
-              rules: [{ required: true, message: 'Insira seu nome' }],
+              rules: [{ required: true, message: 'Insira seu nome!' }],
             })(<Input />)}
           </FormItem>
           <FormItem
@@ -44,7 +44,7 @@ class Forms extends React.Component {
             rules: [{
               type: 'email', message: 'Insira um e-mail válido!',
             }, {
-              required: true, message: 'Insira seu e-mail',
+              required: true, message: 'Insira seu e-mail!',
             }],
             })(<Input />)}
           </FormItem>
