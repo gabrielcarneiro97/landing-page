@@ -1,53 +1,41 @@
 import React from 'react';
-import { Form, Input, Button, Radio } from 'antd';
+import { Form, Input, Button } from 'antd';
 
 const FormItem = Form.Item;
 
 class Forms extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      formLayout: 'horizontal',
-    };
+  constructor(props) {
+    super(props);
+    this.props = props;
+    this.state = {};
   }
-  handleFormLayoutChange(e) {
-    this.setState({ formLayout: e.target.value });
-  }
+
   render() {
-    const { formLayout } = this.state;
-    const formItemLayout = formLayout === 'horizontal' ? {
-      labelCol: { span: 4 },
-      wrapperCol: { span: 14 },
-    } : null;
-    const buttonItemLayout = formLayout === 'horizontal' ? {
-      wrapperCol: { span: 14, offset: 4 },
-    } : null;
+    console.log(this.props);
+    const { getFieldDecorator } = this.props.form;
+    const style = {
+      padding: '5%',
+    };
     return (
-      <div>
-        <Form layout={formLayout}>
-          <FormItem
-            label="Form Layout"
-            {...formItemLayout}
-          >
-            <Radio.Group defaultValue="horizontal" onChange={this.handleFormLayoutChange}>
-              <Radio.Button value="horizontal">Horizontal</Radio.Button>
-              <Radio.Button value="vertical">Vertical</Radio.Button>
-              <Radio.Button value="inline">Inline</Radio.Button>
-            </Radio.Group>
-          </FormItem>
+      <div style={style}>
+        <Form layout="vertical">
           <FormItem
             label="Field A"
-            {...formItemLayout}
           >
-            <Input placeholder="input placeholder" />
+            {getFieldDecorator('email', {
+            rules: [{
+              type: 'email', message: 'The input is not valid E-mail!',
+            }, {
+              required: true, message: 'Please input your E-mail!',
+            }],
+          })(<Input />)}
           </FormItem>
           <FormItem
             label="Field B"
-            {...formItemLayout}
           >
             <Input placeholder="input placeholder" />
           </FormItem>
-          <FormItem {...buttonItemLayout}>
+          <FormItem>
             <Button type="primary">Submit</Button>
           </FormItem>
         </Form>
@@ -56,4 +44,4 @@ class Forms extends React.Component {
   }
 }
 
-export default Forms;
+export default Form.create()(Forms);
