@@ -1,4 +1,5 @@
 import React from 'react';
+import PlaceCard from './PlaceCard';
 
 function Body() {
   return (
@@ -8,7 +9,9 @@ function Body() {
         minHeight: '15vh',
       }}
     >
-      BODY
+      <PlaceCard title="Tá" />
+      <PlaceCard />
+      <PlaceCard />
     </div>
   );
 }

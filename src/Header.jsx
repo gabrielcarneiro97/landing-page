@@ -4,9 +4,6 @@ function Header() {
   return (
     <div
       style={{
-        // backgroundColor: '#1A1B29',
-        // minHeight: '20vh',
-        fontFamily: "'Great Vibes', cursive",
         textAlign: 'center',
       }}
     >
@@ -22,9 +19,10 @@ function Header() {
       <div
         style={{
           marginTop: 0,
+          marginBottom: 0,
         }}
       >
-        <h2>Viaje para onde a sua imaginação quiser!</h2>
+        <h2 style={{ marginBottom: 0 }}>Viaje para onde a sua imaginação quiser!</h2>
       </div>
     </div>
   );
