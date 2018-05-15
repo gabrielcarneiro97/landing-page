@@ -4,18 +4,18 @@ import { Row, Col } from 'antd';
 import './App.css';
 import Forms from './Form';
 import Header from './Header';
-import Body from './Body'
+import Body from './Body';
 
 function App() {
   return (
-    <Row theme="dark">
+    <Row theme="dark" className="App">
       <Col sm={24}>
         <Header />
       </Col>
-      <Col sm={24} md={12} lg={16}>
+      <Col sm={24} md={16}>
         <Body />
       </Col>
-      <Col sm={24} md={12} lg={8}>
+      <Col sm={24} md={8}>
         <Forms />
       </Col>
     </Row>
