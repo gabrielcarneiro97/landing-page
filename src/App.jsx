@@ -6,7 +6,7 @@ import Forms from './Form';
 
 function App() {
   return (
-    <Row>
+    <Row theme="dark">
       <Col sm={24} md={12} lg={16}>
         <div>HOLDER</div>
       </Col>

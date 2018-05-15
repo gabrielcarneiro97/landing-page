@@ -8,35 +8,53 @@ class Forms extends React.Component {
     super(props);
     this.props = props;
     this.state = {};
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.form.validateFields((err, values) => { // eslint-disable-line
+      if (!err) {
+        console.log('Received values of form: ', values);
+      }
+    });
+  }
+
+
   render() {
-    console.log(this.props);
-    const { getFieldDecorator } = this.props.form;
-    const style = {
-      padding: '5%',
-    };
+    const { getFieldDecorator, getFieldsError } = this.props.form; // eslint-disable-line
     return (
-      <div style={style}>
-        <Form layout="vertical">
+      <div style={{
+        padding: '5%',
+        }}
+      >
+        <Form layout="vertical" onSubmit={this.handleSubmit}>
           <FormItem
-            label="Field A"
+            label="Nome:"
+          >
+            {getFieldDecorator('nome', {
+              rules: [{ required: true, message: 'Insira seu nome' }],
+            })(<Input />)}
+          </FormItem>
+          <FormItem
+            label="E-mail:"
           >
             {getFieldDecorator('email', {
             rules: [{
-              type: 'email', message: 'The input is not valid E-mail!',
+              type: 'email', message: 'Insira um e-mail válido!',
             }, {
-              required: true, message: 'Please input your E-mail!',
+              required: true, message: 'Insira seu e-mail',
             }],
-          })(<Input />)}
-          </FormItem>
-          <FormItem
-            label="Field B"
-          >
-            <Input placeholder="input placeholder" />
+            })(<Input />)}
           </FormItem>
           <FormItem>
-            <Button type="primary">Submit</Button>
+            <Button
+              type="primary"
+              htmlType="submit"
+            >
+            Enviar
+            </Button>
           </FormItem>
         </Form>
       </div>
