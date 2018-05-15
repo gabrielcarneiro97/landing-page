@@ -12,6 +12,8 @@ function Body() {
       <PlaceCard title="Tá" />
       <PlaceCard />
       <PlaceCard />
+      <PlaceCard />
+      <PlaceCard />
     </div>
   );
 }

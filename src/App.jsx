@@ -1,6 +1,6 @@
 import 'antd/dist/antd.css';
 import React from 'react';
-import { Row, Col } from 'antd';
+import { Row, Col, Affix } from 'antd';
 import './App.css';
 import Forms from './Form';
 import Header from './Header';
@@ -12,11 +12,13 @@ function App() {
       <Col sm={24}>
         <Header />
       </Col>
-      <Col sm={24} md={16}>
+      <Col sm={24} md={16} lg={18}>
         <Body />
       </Col>
-      <Col sm={24} md={8}>
-        <Forms />
+      <Col sm={24} md={8} lg={6}>
+        <Affix>
+          <Forms />
+        </Affix>
       </Col>
     </Row>
   );
