@@ -5,10 +5,9 @@ import './App.css';
 import Body from './Body';
 
 class App extends React.Component {
-
-  componentWillMount() {
-    window.scrollTo(0, 0);
-    console.log('aqui');
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
 
   render() {

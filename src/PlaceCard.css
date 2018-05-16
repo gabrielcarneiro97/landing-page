@@ -1,0 +1,15 @@
+.card-img {
+  height: 40vh;
+  width: 80vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+@media (min-width: 576px) { 
+  .card-img {
+    height: 40vh;
+    width: 40vw;
+  }
+ }

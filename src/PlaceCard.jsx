@@ -1,8 +1,11 @@
 import React from 'react';
 import { Card, Col, Row } from 'antd';
 
+import './PlaceCard.css';
+
 function PlaceCard(props) {
   const title = props.title || 'Default'; //eslint-disable-line
+  const { children, img } = props; //eslint-disable-line
 
   return (
     <Row
@@ -14,13 +17,22 @@ function PlaceCard(props) {
       }}
     >
       <Col xs={23} md={20}>
-        <Card title={title} bordered={false}>
+        <Card
+          title={title}
+          style={{
+            backgroundColor: 'rgba(255, 255, 255, 0.8)',
+          }}
+        >
           <Row>
-            <Col sm={16}>
-              Card content
+            <Col xs={24} sm={12} id="teste">
+              {children}
             </Col>
-            <Col sm={8}>
-              Image
+            <Col xs={24} sm={12}>
+              <img
+                alt=""
+                src={img}
+                className="card-img"
+              />
             </Col>
           </Row>
         </Card>

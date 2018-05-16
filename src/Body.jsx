@@ -3,8 +3,11 @@ import ScrollAnim from 'rc-scroll-anim';
 import PlaceCard from './PlaceCard';
 
 import gotImg from './got.png';
+import gotImg2 from './got2.png';
 import narniaImg from './narnia.jpg';
+import narniaImg2 from './narnia2.jpg';
 import hogImg from './hog.jpg';
+import hogImg2 from './hog2.jpg';
 
 const ScrollParallax = ScrollAnim.Parallax;
 const ScrollElement = ScrollAnim.Element;
@@ -14,16 +17,11 @@ const narnia = `url(${narniaImg})`;
 const hog = `url(${hogImg})`;
 
 class Body extends React.Component {
-  constructor() {
-    super(...arguments);
+  constructor(props) {
+    super(props);
     this.state = {
       css: { height: '100vh', position: 'fixed', top: 0 },
     };
-    this.onComplete = this.onComplete.bind(this);
-  }
-
-  onComplete(e) {
-    console.log(e);
   }
 
   render() {
@@ -32,12 +30,8 @@ class Body extends React.Component {
         <ScrollParallax
           className="bkg"
           location="Scroll-Pack"
-          animation={{
-            playScale: [1, 2],
-            onComplete: () => { this.onComplete('complete'); },
-            onStartBack: () => { this.onComplete('back start'); },
-          }}
-          style={{ 
+          animation={{ playScale: [1, 2] }}
+          style={{
             ...this.state.css,
            }}
         >
@@ -57,7 +51,7 @@ class Body extends React.Component {
             }}
             location="Scroll-Pack"
           >
-            <PlaceCard title="Narnia" />
+            <PlaceCard title="Narnia" img={narniaImg2} />
             <ScrollParallax
               animation={{ translateY: '0%', playScale: [2, 3] }}
               style={{
@@ -73,7 +67,9 @@ class Body extends React.Component {
               }}
               location="Scroll-Pack"
             >
-              <PlaceCard title="Got" />
+              <PlaceCard title="Got" img={gotImg2}>
+                <div>Top</div>
+              </PlaceCard>
               <ScrollParallax
                 animation={{ translateX: '0%', playScale: [3, 4] }}
                 style={{
@@ -89,7 +85,7 @@ class Body extends React.Component {
                 }}
                 location="Scroll-Pack"
               >
-                <PlaceCard title="Hogwarts" />
+                <PlaceCard title="Hogwarts" img={hogImg2} />
               </ScrollParallax>
             </ScrollParallax>
           </ScrollParallax>
