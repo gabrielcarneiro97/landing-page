@@ -2,14 +2,22 @@ import React from 'react';
 import ScrollAnim from 'rc-scroll-anim';
 import PlaceCard from './PlaceCard';
 
+import gotImg from './got.png';
+import narniaImg from './narnia.jpg';
+import hogImg from './hog.jpg';
+
 const ScrollParallax = ScrollAnim.Parallax;
 const ScrollElement = ScrollAnim.Element;
+
+const got = `url(${gotImg})`;
+const narnia = `url(${narniaImg})`;
+const hog = `url(${hogImg})`;
 
 class Body extends React.Component {
   constructor() {
     super(...arguments);
     this.state = {
-      css: { backgroundColor: '#174270', height: 920 },
+      css: { height: '100vh' },
       cssNoPosition: true,
     };
 
@@ -44,21 +52,27 @@ class Body extends React.Component {
           className="bkg"
           location="Scroll-Pack"
           animation={{
-            backgroundColor: '#0097D0',
             playScale: [1, 2],
             onStart: () => { this.setCss('start'); },
             onCompleteBack: () => { this.setCss('back complete'); },
             onComplete: () => { this.onComplete('complete'); },
             onStartBack: () => { this.onComplete('back start'); },
           }}
-          style={this.state.css}
+          style={{ 
+            ...this.state.css,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundImage: got,
+           }}
         >
           <PlaceCard title="1" />
           <ScrollParallax
             animation={{ translateX: '0%', playScale: [1, 2] }}
             style={{
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundImage: narnia,
               transform: 'translateX(-100%)',
-              backgroundColor: '#F38EAD',
               width: '100%',
               height: '100%',
               position: 'absolute',
@@ -71,8 +85,10 @@ class Body extends React.Component {
             <ScrollParallax
               animation={{ translateY: '0%', playScale: [2, 3] }}
               style={{
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundImage: hog,
                 transform: 'translateY(100%)',
-                backgroundColor: 'red',
                 width: '100%',
                 height: '100%',
                 position: 'absolute',
