@@ -24,7 +24,7 @@ class Body extends React.Component {
   setCss(e) {
     const { css } = this.state;
     console.log(e);
-    if (this.state.cssNoPosition) {
+    if (e === 'back complete') {
       css.position = 'fixed';
       css.top = 0;
     } else {
@@ -37,20 +37,6 @@ class Body extends React.Component {
     });
   }
 
-  // return (
-  //   <div
-  //     style={{
-  //       backgroundColor: '#30334C',
-  //       minHeight: '15vh',
-  //     }}
-  //   >
-  //     <PlaceCard title="Tá" />
-  //     <PlaceCard />
-  //     <PlaceCard />
-  //     <PlaceCard />
-  //     <PlaceCard />
-  //   </div>
-  // );
   render() {
     return (
       <ScrollElement style={{ height: '300vh' }} id="Scroll-Pack">
@@ -67,6 +53,7 @@ class Body extends React.Component {
           }}
           style={this.state.css}
         >
+          <PlaceCard title="1" />
           <ScrollParallax
             animation={{ translateX: '0%', playScale: [1, 2] }}
             style={{
@@ -75,47 +62,27 @@ class Body extends React.Component {
               width: '100%',
               height: '100%',
               position: 'absolute',
+              top: 0,
+              left: 0,
             }}
             location="Scroll-Pack"
           >
+            <PlaceCard title="2" />
             <ScrollParallax
-              animation={{ translateX: '0%', playScale: [2, 3] }}
+              animation={{ translateY: '0%', playScale: [2, 3] }}
               style={{
-                transform: 'translateX(-100%)',
+                transform: 'translateY(100%)',
                 backgroundColor: 'red',
                 width: '100%',
                 height: '100%',
                 position: 'absolute',
+                left: 0,
+                top: 0,
               }}
               location="Scroll-Pack"
-            />
-          </ScrollParallax>
-          <ScrollParallax
-            animation={[{ translateY: 0 }, { translateY: '-100vh' }]}
-            location="Scroll-Pack"
-            style={{
-              height: '100vh',
-            }}
-          >
-            <PlaceCard title="1" />
-          </ScrollParallax>
-          <ScrollParallax
-            animation={[{ translateY: 0 }, { translateY: '-200vh', playScale: [0, 2] }]}
-            location="Scroll-Pack"
-            style={{
-              height: '100vh',
-            }}
-          >
-            <PlaceCard title="2" />
-          </ScrollParallax>
-          <ScrollParallax
-            animation={[{ translateY: 0 }, { translateY: '-250vh', playScale: [0, 3] }]}
-            location="Scroll-Pack"
-            style={{
-              height: '100vh',
-            }}
-          >
-            <PlaceCard title="3" />
+            >
+              <PlaceCard title="3" />
+            </ScrollParallax>
           </ScrollParallax>
         </ScrollParallax>
       </ScrollElement>
