@@ -5,6 +5,7 @@ function Header() {
     <div
       style={{
         textAlign: 'center',
+        height: '25vh',
       }}
     >
       <div>
