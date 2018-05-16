@@ -38,7 +38,24 @@ class PlaceCard extends React.Component {
 
   render() {
     const title = this.props.title || 'Default'; //eslint-disable-line
-    const { col1, col2, haveButton } = this.props; //eslint-disable-line
+    const { col1, col2, haveButton, singleCol } = this.props; //eslint-disable-line
+
+    const row = singleCol ? (
+      <Row>
+        <Col xs={24}>
+          {singleCol}
+        </Col>
+      </Row>
+    ) : (
+      <Row>
+        <Col xs={24} md={12}>
+          {col1}
+        </Col>
+        <Col xs={24} md={12}>
+          {col2}
+        </Col>
+      </Row>
+    );
 
     const actions = haveButton ? (
       <div>
@@ -47,7 +64,7 @@ class PlaceCard extends React.Component {
           visible={this.state.visible}
           onCancel={this.handleCancel}
           onCreate={this.handleSubmit}
-          destinho={title}
+          destino={title}
         />
         <Button onClick={this.showModal}>Quero Este!</Button>
       </div>) : null;
@@ -70,14 +87,7 @@ class PlaceCard extends React.Component {
             }}
             extra={actions}
           >
-            <Row>
-              <Col xs={24} md={12}>
-                {col1}
-              </Col>
-              <Col xs={24} md={12}>
-                {col2}
-              </Col>
-            </Row>
+            {row}
           </Card>
         </Col>
       </Row>

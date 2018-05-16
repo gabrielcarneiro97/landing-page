@@ -1,0 +1,12 @@
+.seta {
+    animation: pulse 1s infinite;
+}
+
+.seta:hover {
+    cursor: pointer;
+}
+
+@keyframes pulse{
+    25%  {transform: translateY(10px);}
+    75%  {transform: translateY(7px);}
+}
