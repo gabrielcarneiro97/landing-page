@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Col, Row, Button } from 'antd';
 
-import ModalForm from './Form';
+import ModalForm from './ModalForm';
 
 import './PlaceCard.css';
 
@@ -37,7 +37,8 @@ class PlaceCard extends React.Component {
   }
 
   render() {
-    const title = this.props.title || 'Default'; //eslint-disable-line
+    const destino = this.props.title; //eslint-disable-line
+    const title = <div className="title-big">{this.props.title}</div> || 'Default'; //eslint-disable-line
     const { col1, col2, haveButton, singleCol } = this.props; //eslint-disable-line
 
     const row = singleCol ? (
@@ -47,7 +48,7 @@ class PlaceCard extends React.Component {
         </Col>
       </Row>
     ) : (
-      <Row>
+      <Row gutter={16}>
         <Col xs={24} md={12}>
           {col1}
         </Col>
@@ -64,7 +65,7 @@ class PlaceCard extends React.Component {
           visible={this.state.visible}
           onCancel={this.handleCancel}
           onCreate={this.handleSubmit}
-          destino={title}
+          destino={destino}
         />
         <Button onClick={this.showModal}>Quero Este!</Button>
       </div>) : null;
@@ -74,16 +75,16 @@ class PlaceCard extends React.Component {
         type="flex"
         justify="center"
         style={{
-          marginTop: '5vh',
-          paddingTop: '2vh',
-          paddingBottom: '2vh',
+          paddingTop: '1vh',
         }}
       >
         <Col xs={23} md={20}>
           <Card
             title={title}
+            className="text"
             style={{
               backgroundColor: 'rgba(255, 255, 255, 0.8)',
+              textAlign: 'justify',
             }}
             extra={actions}
           >

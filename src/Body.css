@@ -1,0 +1,21 @@
+.text {
+    font-size: 16px;
+}
+.title {
+    font-size: 20px;
+}
+
+.title-big {
+    font-size: 40px;
+}
+@media (max-width: 900px) { 
+    .text {
+        font-size: 2vw;
+    }
+    .title {
+        font-size: 3vw;
+    }
+    .title-big {
+        font-size: 5vw;
+    }
+}
