@@ -51,7 +51,7 @@ class Body extends React.Component {
             }}
             location="Scroll-Pack"
           >
-            <PlaceCard title="Narnia" img={narniaImg2} />
+            <PlaceCard title="Narnia" haveButton />
             <ScrollParallax
               animation={{ translateY: '0%', playScale: [2, 3] }}
               style={{
@@ -67,9 +67,19 @@ class Body extends React.Component {
               }}
               location="Scroll-Pack"
             >
-              <PlaceCard title="Got" img={gotImg2}>
-                <div>Top</div>
-              </PlaceCard>
+              <PlaceCard
+                title="Got"
+                col1={
+                  <div>
+                    Top1
+                  </div>
+                }
+                col2={
+                  <div>
+                    Top2
+                  </div>
+                }
+              />
               <ScrollParallax
                 animation={{ translateX: '0%', playScale: [3, 4] }}
                 style={{

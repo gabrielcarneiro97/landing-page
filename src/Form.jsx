@@ -1,33 +1,26 @@
 import React from 'react';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Modal } from 'antd';
 
 const FormItem = Form.Item;
 
-class Forms extends React.Component {
+const ModalForm = Form.create()(class extends React.Component {
   constructor(props) {
     super(props);
-    this.props = props;
     this.state = {};
-
-    this.handleSubmit = this.handleSubmit.bind(this);
+    console.log(this.props) // eslint-disable-line
   }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.form.validateFields((err, values) => { // eslint-disable-line
-      if (!err) {
-        console.log('Received values of form: ', values);
-      }
-    });
-  }
-
 
   render() {
-    const { getFieldDecorator, getFieldsError } = this.props.form; // eslint-disable-line
+    const { visible, onCancel, onCreate, form, destino } = this.props; // eslint-disable-line
+    const { getFieldDecorator } = form;
     return (
-      <div style={{
-        padding: '5%',
-        }}
+      <Modal
+        visible={visible}
+        title="Pedir Mais informações"
+        okText="Enviar"
+        cancelText="Cancelar"
+        onCancel={onCancel}
+        onOk={onCreate}
       >
         <Form layout="vertical" onSubmit={this.handleSubmit}>
           <FormItem
@@ -41,25 +34,20 @@ class Forms extends React.Component {
             label="E-mail:"
           >
             {getFieldDecorator('email', {
-            rules: [{
-              type: 'email', message: 'Insira um e-mail válido!',
-            }, {
-              required: true, message: 'Insira seu e-mail!',
-            }],
+              rules: [{
+                type: 'email', message: 'Insira um e-mail válido!',
+              }, {
+                required: true, message: 'Insira seu e-mail!',
+              }],
             })(<Input />)}
           </FormItem>
-          <FormItem>
-            <Button
-              type="primary"
-              htmlType="submit"
-            >
-            Enviar
-            </Button>
+          <FormItem label="Destino:">
+            <Input disabled value={destino} />
           </FormItem>
         </Form>
-      </div>
+      </Modal>
     );
   }
-}
+});
 
-export default Form.create()(Forms);
+export default ModalForm;
