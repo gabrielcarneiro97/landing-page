@@ -17,11 +17,8 @@ class Body extends React.Component {
   constructor() {
     super(...arguments);
     this.state = {
-      css: { height: '100vh' },
-      cssNoPosition: true,
+      css: { height: '100vh', position: 'fixed', top: 0 },
     };
-
-    this.setCss = this.setCss.bind(this);
     this.onComplete = this.onComplete.bind(this);
   }
 
@@ -29,43 +26,22 @@ class Body extends React.Component {
     console.log(e);
   }
 
-  setCss(e) {
-    const { css } = this.state;
-    console.log(e);
-    if (e === 'back complete') {
-      css.position = 'fixed';
-      css.top = 0;
-    } else {
-      css.position = '';
-      css.top = '';
-    }
-    this.setState({
-      css,
-      cssNoPosition: !this.state.cssNoPosition,
-    });
-  }
-
   render() {
     return (
-      <ScrollElement style={{ height: '300vh' }} id="Scroll-Pack">
+      <ScrollElement style={{ height: '400vh' }} id="Scroll-Pack">
         <ScrollParallax
           className="bkg"
           location="Scroll-Pack"
           animation={{
             playScale: [1, 2],
-            onStart: () => { this.setCss('start'); },
-            onCompleteBack: () => { this.setCss('back complete'); },
             onComplete: () => { this.onComplete('complete'); },
             onStartBack: () => { this.onComplete('back start'); },
           }}
           style={{ 
             ...this.state.css,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundImage: got,
            }}
         >
-          <PlaceCard title="1" />
+          <PlaceCard title="Inicio" />
           <ScrollParallax
             animation={{ translateX: '0%', playScale: [1, 2] }}
             style={{
@@ -81,13 +57,13 @@ class Body extends React.Component {
             }}
             location="Scroll-Pack"
           >
-            <PlaceCard title="2" />
+            <PlaceCard title="Narnia" />
             <ScrollParallax
               animation={{ translateY: '0%', playScale: [2, 3] }}
               style={{
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
-                backgroundImage: hog,
+                backgroundImage: got,
                 transform: 'translateY(100%)',
                 width: '100%',
                 height: '100%',
@@ -97,7 +73,24 @@ class Body extends React.Component {
               }}
               location="Scroll-Pack"
             >
-              <PlaceCard title="3" />
+              <PlaceCard title="Got" />
+              <ScrollParallax
+                animation={{ translateX: '0%', playScale: [3, 4] }}
+                style={{
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover',
+                  backgroundImage: hog,
+                  transform: 'translateX(-100%)',
+                  width: '100%',
+                  height: '100%',
+                  position: 'absolute',
+                  left: 0,
+                  top: 0,
+                }}
+                location="Scroll-Pack"
+              >
+                <PlaceCard title="Hogwarts" />
+              </ScrollParallax>
             </ScrollParallax>
           </ScrollParallax>
         </ScrollParallax>

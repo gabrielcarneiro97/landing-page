@@ -13,7 +13,7 @@ function PlaceCard(props) {
         paddingBottom: '2vh',
       }}
     >
-      <Col sm={24} md={20}>
+      <Col xs={23} md={20}>
         <Card title={title} bordered={false}>
           <Row>
             <Col sm={16}>
