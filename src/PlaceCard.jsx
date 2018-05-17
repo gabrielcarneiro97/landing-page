@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Row, Button } from 'antd';
+import { Card, Col, Row, Button, message } from 'antd';
 
 import ModalForm from './ModalForm';
 
@@ -30,6 +30,7 @@ class PlaceCard extends React.Component {
       form.validateFields((err, values) => { // eslint-disable-line
         if (!err) {
           console.log('Received values of form: ', values);
+          message.success('Informações adicionais foram encaminhadas para o seu e-mail!', 1);
           this.setState({ visible: false });
         }
       });
@@ -76,6 +77,7 @@ class PlaceCard extends React.Component {
         justify="center"
         style={{
           paddingTop: '1vh',
+          margin: '3vh',
         }}
       >
         <Col xs={23} md={20}>

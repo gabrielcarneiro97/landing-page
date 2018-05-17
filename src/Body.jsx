@@ -11,6 +11,8 @@ import gotImg from './got.png';
 import narniaImg from './narnia.jpg';
 import hogImg from './hog.jpg';
 import wandIcon from './wand-icon.svg';
+import lionIcon from './lion-icon.svg';
+import gotIcon from './got-icon.svg';
 
 const ScrollParallax = ScrollAnim.Parallax;
 const ScrollElement = ScrollAnim.Element;
@@ -56,12 +58,12 @@ class Body extends React.Component {
               </Col>
             </Row>
             <ScrollParallax
-              animation={{ translateX: '0%', playScale: [1, 2] }}
+              animation={{ translateY: '0%', playScale: [1, 2] }}
               style={{
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundImage: narnia,
-                transform: 'translateX(-100%)',
+                transform: 'translateY(100%)',
                 width: '100%',
                 height: '100%',
                 position: 'absolute',
@@ -76,21 +78,18 @@ class Body extends React.Component {
                 col1={
                   <div className="text">
                     <div>
-                      A Escola de Magia e Bruxaria de Hogwarts, ou simplesmente Hogwarts,
-                      é um internato de magia para bruxos e bruxas com idades entre os onze e
-                      dezessete anos.
+                      Nárnia é um mundo plano e geocêntrico, ao contrário do nosso, conforme é
+                      narrado em A Viagem do Peregrino da Alvorada. No limiar do mundo de Nárnia,
+                      o oceano tem água doce, é coberto por flores, e o céu encontra o mar. Além
+                      do mais, no extremo leste deste oceano está o País de Aslam.
                     </div>
                     <div>
-                      A propriedade de Hogwarts é extensa, abrangendo o enorme castelo, que
-                      possui várias torres e masmorras com as respectivas salas de aulas,
-                      os professores, as salas comuns de cada casa (Ravenclaw,
-                      Gryffindor, Hufflepuff e Slytherin), os Dormitórios dos alunos,
-                      as Cozinhas de Hogwarts (onde podemos encontrar elfos domésticos),
-                      o Salão Principal, o Salão de Entrada, todos os aposentos frequentados
-                      diariamente pelos alunos, professores e funcionários.
+                    Em Nárnia, alguns animais podem falar, as criaturas mitológicas abundam,
+                    e a magia é comum. As pessoas, geralmente crianças, entram no mundo narniano
+                    provenientes do "nosso mundo", a Terra.
                     </div>
                     <div className="title" style={{ textAlign: 'center', marginTop: '5vh' }}>
-                      Venha Conhecer Hogwarts!
+                      Venha Conhecer Narnia!
                     </div>
                   </div>
                 }
@@ -100,16 +99,16 @@ class Body extends React.Component {
                     itemLayout="horizontal"
                     dataSource={[
                       {
-                        desc: 'Você terá o prazer de desfrutar das melhores iguarias de Hogwarts, tendo a oportunidade única de experimentar a lendária cerveja amanteigada!',
+                        desc: 'Você poderá visitar lugares únicos como o grande castelo de Cair Paravel.',
                       },
                       {
-                        desc: 'A viagem também inclui um passeio épico a Hogsmeade passando pela cabana do grande Hagrid!',
+                        desc: 'A viagem inclui um passeio no lendário barco Peregrino da Alvorada',
                       },
                       {
-                        desc: 'Visitar Hogwarts e não assistir a uma partida de quadribol seria um pecado, fique tranquilo que o seu ingresso já está garantido!',
+                        desc: 'Aslan ronda Narnia, com um pouco de sorte você certamente o encontrará!',
                       },
                       {
-                        desc: 'Para quem curte aventuras radicais existe um passeio de hipogrifo que vai deixar sua viagem ainda mais divertida!',
+                        desc: 'Para os mais valentes Narnia sempre guarda gigantes prontos para serem destruidos!',
                       },
                       {
                         desc: 'E muito mais!',
@@ -118,7 +117,7 @@ class Body extends React.Component {
                     renderItem={item => (
                       <List.Item style={{ padding: '1vw' }}>
                         <List.Item.Meta
-                          avatar={<Avatar style={{ width: '4vw' }} src={wandIcon} />}
+                          avatar={<Avatar style={{ width: '4vw' }} src={lionIcon} />}
                           description={<div className="text" style={{ lineHeight: 'normal' }}>{item.desc}</div>}
                         />
                       </List.Item>
@@ -150,21 +149,25 @@ class Body extends React.Component {
                   col1={
                     <div className="text">
                       <div>
-                        A Escola de Magia e Bruxaria de Hogwarts, ou simplesmente Hogwarts,
-                        é um internato de magia para bruxos e bruxas com idades entre os onze e
-                        dezessete anos.
+                        Westeros é a casa dos Sete Reinos e das terras além da grande Muralha,
+                        que compõe um grande pedaço de Westeros, sendo aproximadamente do
+                        tamanho do norte do Canadá, com a maior parte não-mapeada e inexplorada.
+                        Westeros está à mercê de estações erráticas de duração imprevisível
+                        que podem durar por muitos anos.
                       </div>
                       <div>
-                        A propriedade de Hogwarts é extensa, abrangendo o enorme castelo, que
-                        possui várias torres e masmorras com as respectivas salas de aulas,
-                        os professores, as salas comuns de cada casa (Ravenclaw,
-                        Gryffindor, Hufflepuff e Slytherin), os Dormitórios dos alunos,
-                        as Cozinhas de Hogwarts (onde podemos encontrar elfos domésticos),
-                        o Salão Principal, o Salão de Entrada, todos os aposentos frequentados
-                        diariamente pelos alunos, professores e funcionários.
+                        Trezentos anos antes da saga começar, Aegon o Conquistador e suas duas
+                        esposas-irmãs Targaryen vieram de Pedra do Dragão e se estabeleceram no
+                        que hoje é conhecido como Porto Real. Seus poderosos dragões
+                        sobrepujaram seis dos sete reinos por conquista ou ameaça,
+                        mas Dorne continuou independente por mais duzentos anos até ser absorvido
+                        através de uma aliança de casamento. Os Targaryen forjaram o Trono de
+                        Ferro das espadas daqueles a quem derrotaram, fundidas em fogo de dragão,
+                        estabelecendo Porto Real como sua capital e continuaram tendo o poder no
+                        continente até serem depostos por Robert Baratheon e Ned Stark.
                       </div>
                       <div className="title" style={{ textAlign: 'center', marginTop: '5vh' }}>
-                        Venha Conhecer Hogwarts!
+                        Venha Conhecer Westeros!
                       </div>
                     </div>
                   }
@@ -174,16 +177,16 @@ class Body extends React.Component {
                       itemLayout="horizontal"
                       dataSource={[
                         {
-                          desc: 'Você terá o prazer de desfrutar das melhores iguarias de Hogwarts, tendo a oportunidade única de experimentar a lendária cerveja amanteigada!',
+                          desc: 'Tenha a oportunidade de conhecer Winterfell, a Muralha e Porto Real, tudo em uma única viagem!',
                         },
                         {
-                          desc: 'A viagem também inclui um passeio épico a Hogsmeade passando pela cabana do grande Hagrid!',
+                          desc: 'A viagem também inclui um ovo de dragão inteiramente grátis!',
                         },
                         {
-                          desc: 'Visitar Hogwarts e não assistir a uma partida de quadribol seria um pecado, fique tranquilo que o seu ingresso já está garantido!',
+                          desc: 'Ganhe inteiramente grátis um voo de dragão por Pedra de Dragão!',
                         },
                         {
-                          desc: 'Para quem curte aventuras radicais existe um passeio de hipogrifo que vai deixar sua viagem ainda mais divertida!',
+                          desc: 'Venha aprender a manejar uma espada com os melhores espadachins dos Sete Reinos!',
                         },
                         {
                           desc: 'E muito mais!',
@@ -192,7 +195,7 @@ class Body extends React.Component {
                       renderItem={item => (
                         <List.Item style={{ padding: '1vw' }}>
                           <List.Item.Meta
-                            avatar={<Avatar style={{ width: '4vw' }} src={wandIcon} />}
+                            avatar={<Avatar style={{ width: '4vw' }} src={gotIcon} />}
                             description={<div className="text" style={{ lineHeight: 'normal' }}>{item.desc}</div>}
                           />
                         </List.Item>
@@ -204,12 +207,12 @@ class Body extends React.Component {
                   <Seta to={4} />
                 </div>
                 <ScrollParallax
-                  animation={{ translateX: '0%', playScale: [3, 4] }}
+                  animation={{ translateY: '0%', playScale: [3, 4] }}
                   style={{
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
                     backgroundImage: hog,
-                    transform: 'translateX(-100%)',
+                    transform: 'translateY(100%)',
                     width: '100%',
                     height: '100%',
                     position: 'absolute',
