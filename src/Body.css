@@ -33,13 +33,13 @@
 
 @media (max-width: 900px) { 
     .text {
-        font-size: 2.2vw;
+        font-size: 1.5vw;
     }
     .title {
-        font-size: 3.2vw;
+        font-size: 2vw;
     }
     .title-big {
-        font-size: 5vw;
+        font-size: 3vw;
     }
     .card {
         padding-top: 0;    
@@ -49,13 +49,13 @@
 
 @media (max-width: 500px) {
     .text {
-        font-size: 3.2vw;
+        font-size: 2vw;
     }
     .title {
-        font-size: 4vw;
+        font-size: 3vw;
     }
     .title-big {
-        font-size: 7vw;
+        font-size: 5vw;
     }
     .card {
         padding-top: 0;    
@@ -65,10 +65,10 @@
 
 @media (max-width: 350px) {
     .text {
-        font-size: 2.7vw;
+        font-size: 2.5vw;
     }
     .title {
-        font-size: 3.5vw;
+        font-size: 3.3vw;
     }
     .title-big {
         font-size: 5vw;
@@ -77,11 +77,10 @@
         padding-top: 0;    
         margin: 1vh;
     }
-    .btn {
-        height: 3vh;
-        font-size: 2vh;
-    }
-    .ant-card-head {
-        height: 2vh;        
-    }
+    /* .btn {
+        display: none;
+    } */
+    /* .btn-small {
+        disp
+    } */
 }
