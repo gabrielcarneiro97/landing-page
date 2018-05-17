@@ -1,5 +1,7 @@
 .seta {
     animation: pulse 1s infinite;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .seta:hover {

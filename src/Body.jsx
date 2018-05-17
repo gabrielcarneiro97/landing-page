@@ -1,6 +1,6 @@
 import React from 'react';
 import ScrollAnim from 'rc-scroll-anim';
-import { Row, Col, List, Avatar } from 'antd';
+import { Row, Col } from 'antd';
 
 import PlaceCard from './PlaceCard';
 import Seta from './Seta';
@@ -88,42 +88,29 @@ class Body extends React.Component {
                     e a magia é comum. As pessoas, geralmente crianças, entram no mundo narniano
                     provenientes do "nosso mundo", a Terra.
                     </div>
-                    <div className="title" style={{ textAlign: 'center', marginTop: '5vh' }}>
+                    <div className="title" style={{ textAlign: 'center', marginTop: '2vh' }}>
                       Venha Conhecer Narnia!
                     </div>
                   </div>
                 }
-                col2={
-                  <List
-                    header={<div className="title" style={{ padding: 0 }}>Inclui:</div>}
-                    itemLayout="horizontal"
-                    dataSource={[
-                      {
-                        desc: 'Você poderá visitar lugares únicos como o grande castelo de Cair Paravel.',
-                      },
-                      {
-                        desc: 'A viagem inclui um passeio no lendário barco Peregrino da Alvorada',
-                      },
-                      {
-                        desc: 'Aslan ronda Narnia, com um pouco de sorte você certamente o encontrará!',
-                      },
-                      {
-                        desc: 'Para os mais valentes Narnia sempre guarda gigantes prontos para serem destruidos!',
-                      },
-                      {
-                        desc: 'E muito mais!',
-                      },
-                    ]}
-                    renderItem={item => (
-                      <List.Item style={{ padding: '1vw' }}>
-                        <List.Item.Meta
-                          avatar={<Avatar style={{ width: '4vw' }} src={lionIcon} />}
-                          description={<div className="text" style={{ lineHeight: 'normal' }}>{item.desc}</div>}
-                        />
-                      </List.Item>
-                    )}
-                  />
-                }
+                listIcon={lionIcon}
+                listData={[
+                  {
+                    desc: 'Você poderá visitar lugares únicos como o grande castelo de Cair Paravel.',
+                  },
+                  {
+                    desc: 'A viagem inclui um passeio no lendário barco Peregrino da Alvorada',
+                  },
+                  {
+                    desc: 'Aslan ronda Narnia, com um pouco de sorte você certamente o encontrará!',
+                  },
+                  {
+                    desc: 'Para os mais valentes Narnia sempre guarda gigantes prontos para serem destruidos!',
+                  },
+                  {
+                    desc: 'E muito mais!',
+                  },
+                ]}
               />
               <div style={{ textAlign: 'center', color: 'white' }}>
                 <Seta to={3} />
@@ -150,14 +137,13 @@ class Body extends React.Component {
                     <div className="text">
                       <div>
                         Westeros é a casa dos Sete Reinos e das terras além da grande Muralha,
-                        que compõe um grande pedaço de Westeros, sendo aproximadamente do
+                        sendo aproximadamente do
                         tamanho do norte do Canadá, com a maior parte não-mapeada e inexplorada.
                         Westeros está à mercê de estações erráticas de duração imprevisível
                         que podem durar por muitos anos.
                       </div>
                       <div>
-                        Trezentos anos antes da saga começar, Aegon o Conquistador e suas duas
-                        esposas-irmãs Targaryen vieram de Pedra do Dragão e se estabeleceram no
+                        Trezentos anos antes da saga começar, Aegon o Conquistador se estabeleceu no
                         que hoje é conhecido como Porto Real. Seus poderosos dragões
                         sobrepujaram seis dos sete reinos por conquista ou ameaça,
                         mas Dorne continuou independente por mais duzentos anos até ser absorvido
@@ -166,42 +152,29 @@ class Body extends React.Component {
                         estabelecendo Porto Real como sua capital e continuaram tendo o poder no
                         continente até serem depostos por Robert Baratheon e Ned Stark.
                       </div>
-                      <div className="title" style={{ textAlign: 'center', marginTop: '5vh' }}>
+                      <div className="title" style={{ textAlign: 'center', marginTop: '2vh' }}>
                         Venha Conhecer Westeros!
                       </div>
                     </div>
                   }
-                  col2={
-                    <List
-                      header={<div className="title" style={{ padding: 0 }}>Inclui:</div>}
-                      itemLayout="horizontal"
-                      dataSource={[
-                        {
-                          desc: 'Tenha a oportunidade de conhecer Winterfell, a Muralha e Porto Real, tudo em uma única viagem!',
-                        },
-                        {
-                          desc: 'A viagem também inclui um ovo de dragão inteiramente grátis!',
-                        },
-                        {
-                          desc: 'Ganhe inteiramente grátis um voo de dragão por Pedra de Dragão!',
-                        },
-                        {
-                          desc: 'Venha aprender a manejar uma espada com os melhores espadachins dos Sete Reinos!',
-                        },
-                        {
-                          desc: 'E muito mais!',
-                        },
-                      ]}
-                      renderItem={item => (
-                        <List.Item style={{ padding: '1vw' }}>
-                          <List.Item.Meta
-                            avatar={<Avatar style={{ width: '4vw' }} src={gotIcon} />}
-                            description={<div className="text" style={{ lineHeight: 'normal' }}>{item.desc}</div>}
-                          />
-                        </List.Item>
-                      )}
-                    />
-                  }
+                  listIcon={gotIcon}
+                  listData={[
+                    {
+                      desc: 'Tenha a oportunidade de conhecer Winterfell, a Muralha e Porto Real, tudo em uma única viagem!',
+                    },
+                    {
+                      desc: 'A viagem também inclui um ovo de dragão inteiramente grátis!',
+                    },
+                    {
+                      desc: 'Ganhe inteiramente grátis um voo de dragão por Pedra de Dragão!',
+                    },
+                    {
+                      desc: 'Venha aprender a manejar uma espada com os melhores espadachins dos Sete Reinos!',
+                    },
+                    {
+                      desc: 'E muito mais!',
+                    },
+                  ]}
                 />
                 <div style={{ textAlign: 'center', color: 'white' }}>
                   <Seta to={4} />
@@ -240,42 +213,29 @@ class Body extends React.Component {
                           o Salão Principal, o Salão de Entrada, todos os aposentos frequentados
                           diariamente pelos alunos, professores e funcionários.
                         </div>
-                        <div className="title" style={{ textAlign: 'center', marginTop: '5vh' }}>
+                        <div className="title" style={{ textAlign: 'center', marginTop: '2vh' }}>
                           Venha Conhecer Hogwarts!
                         </div>
                       </div>
                     }
-                    col2={
-                      <List
-                        header={<div className="title" style={{ padding: 0 }}>Inclui:</div>}
-                        itemLayout="horizontal"
-                        dataSource={[
-                          {
-                            desc: 'Você terá o prazer de desfrutar das melhores iguarias de Hogwarts, tendo a oportunidade única de experimentar a lendária cerveja amanteigada!',
-                          },
-                          {
-                            desc: 'A viagem também inclui um passeio épico a Hogsmeade passando pela cabana do grande Hagrid!',
-                          },
-                          {
-                            desc: 'Visitar Hogwarts e não assistir a uma partida de quadribol seria um pecado, fique tranquilo que o seu ingresso já está garantido!',
-                          },
-                          {
-                            desc: 'Para quem curte aventuras radicais existe um passeio de hipogrifo que vai deixar sua viagem ainda mais divertida!',
-                          },
-                          {
-                            desc: 'E muito mais!',
-                          },
-                        ]}
-                        renderItem={item => (
-                          <List.Item style={{ padding: '1vw' }}>
-                            <List.Item.Meta
-                              avatar={<Avatar style={{ width: '4vw' }} src={wandIcon} />}
-                              description={<div className="text" style={{ lineHeight: 'normal' }}>{item.desc}</div>}
-                            />
-                          </List.Item>
-                        )}
-                      />
-                    }
+                    listIcon={wandIcon}
+                    listData={[
+                      {
+                        desc: 'Você terá o prazer de desfrutar das melhores iguarias de Hogwarts, tendo a oportunidade única de experimentar a lendária cerveja amanteigada!',
+                      },
+                      {
+                        desc: 'A viagem também inclui um passeio épico a Hogsmeade passando pela cabana do grande Hagrid!',
+                      },
+                      {
+                        desc: 'Visitar Hogwarts e não assistir a uma partida de quadribol seria um pecado, fique tranquilo que o seu ingresso já está garantido!',
+                      },
+                      {
+                        desc: 'Para quem curte aventuras radicais existe um passeio de hipogrifo que vai deixar sua viagem ainda mais divertida!',
+                      },
+                      {
+                        desc: 'E muito mais!',
+                      },
+                    ]}
                   />
                   <div style={{ textAlign: 'center', color: 'white' }}>
                     <Seta to={1} up />

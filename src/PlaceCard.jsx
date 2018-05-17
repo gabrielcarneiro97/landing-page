@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Row, Button, message } from 'antd';
+import { Card, Col, Row, Button, List, Avatar, message } from 'antd';
 
 import ModalForm from './ModalForm';
 
@@ -40,7 +40,7 @@ class PlaceCard extends React.Component {
   render() {
     const destino = this.props.title; //eslint-disable-line
     const title = <div className="title-big">{this.props.title}</div> || 'Default'; //eslint-disable-line
-    const { col1, col2, haveButton, singleCol } = this.props; //eslint-disable-line
+    const { col1, col2, haveButton, singleCol, listData,  listIcon } = this.props; //eslint-disable-line
 
     const row = singleCol ? (
       <Row>
@@ -54,7 +54,19 @@ class PlaceCard extends React.Component {
           {col1}
         </Col>
         <Col xs={24} md={12}>
-          {col2}
+          <List
+            header={<div className="title" style={{ padding: 0 }}>Inclui:</div>}
+            itemLayout="horizontal"
+            dataSource={listData}
+            renderItem={item => (
+              <List.Item style={{ padding: '1vw' }}>
+                <List.Item.Meta
+                  avatar={<Avatar style={{ width: '4vw' }} src={listIcon} />}
+                  description={<div className="text" style={{ lineHeight: 'normal' }}>{item.desc}</div>}
+                />
+              </List.Item>
+            )}
+          />
         </Col>
       </Row>
     );
@@ -68,17 +80,14 @@ class PlaceCard extends React.Component {
           onCreate={this.handleSubmit}
           destino={destino}
         />
-        <Button onClick={this.showModal}>Quero Este!</Button>
+        <Button onClick={this.showModal} className="btn">Quero Este!</Button>
       </div>) : null;
 
     return (
       <Row
         type="flex"
         justify="center"
-        style={{
-          paddingTop: '1vh',
-          margin: '3vh',
-        }}
+        className="card"
       >
         <Col xs={23} md={20}>
           <Card

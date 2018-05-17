@@ -1,21 +1,87 @@
 .text {
-    font-size: 16px;
+    font-size: 0.9vw;
 }
 .title {
-    font-size: 20px;
+    font-size: 1.5vw;
 }
 
 .title-big {
-    font-size: 40px;
+    font-size: 2.5vw;
 }
-@media (max-width: 900px) { 
+
+.card {
+    padding-top: 1vh;
+    margin: 3vh;
+}
+
+@media (max-width: 1000px) {
     .text {
-        font-size: 2vw;
+    font-size: 1vw;
     }
     .title {
-        font-size: 3vw;
+        font-size: 1.8vw;
+    }
+
+    .title-big {
+        font-size: 2.9vw;
+    }
+    .card {
+        padding-top: 0.5vh;    
+        margin: 1vh;
+    }
+}
+
+@media (max-width: 900px) { 
+    .text {
+        font-size: 2.2vw;
+    }
+    .title {
+        font-size: 3.2vw;
     }
     .title-big {
         font-size: 5vw;
+    }
+    .card {
+        padding-top: 0;    
+        margin: 1vh;
+    }
+}
+
+@media (max-width: 500px) {
+    .text {
+        font-size: 3.2vw;
+    }
+    .title {
+        font-size: 4vw;
+    }
+    .title-big {
+        font-size: 7vw;
+    }
+    .card {
+        padding-top: 0;    
+        margin: 1vh;
+    }
+}
+
+@media (max-width: 350px) {
+    .text {
+        font-size: 2.7vw;
+    }
+    .title {
+        font-size: 3.5vw;
+    }
+    .title-big {
+        font-size: 5vw;
+    }
+    .card {
+        padding-top: 0;    
+        margin: 1vh;
+    }
+    .btn {
+        height: 3vh;
+        font-size: 2vh;
+    }
+    .ant-card-head {
+        height: 2vh;        
     }
 }
